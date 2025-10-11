@@ -43,7 +43,18 @@ if __name__=='__main__':
     nth_element = 2
     if len(sys.argv) == 3:
         given_list = sys.argv[1].strip('[').strip(']').split(',')
-        nth_element = int(sys.argv[2])
+        try:
+            nth_element = int(sys.argv[2])
+        except ValueError as e:
+            print(e)
+            try:
+                temp_float = float(sys.argv[2])
+            except ValueError as f:
+                print(f)
+                exit(1)
+            if isinstance(temp_float, float):
+                nth_element = int(temp_float * 10)
+        
 
         print(" %dth largest element in given_list = %s is = %s" % (nth_element,given_list,find_nth_largest_element_in_a_list(given_list,nth_element)))
     elif len(sys.argv) == 2:
