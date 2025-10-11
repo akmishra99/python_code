@@ -28,7 +28,16 @@ import sys
 
 
 def find_nth_largest_element_in_a_list(given_list =[3,6,2,3,8,5,8,7] ,nth_element  = 2):
-    list_of_integers = list(map(int, given_list))
+    try:
+        list_of_integers = list(map(int, given_list))
+        
+    except ValueError as g:
+        print(g)
+        return None
+    except Exception as h:
+        print(h)
+        return None
+     
     try:
         return sorted(set(list_of_integers))[-nth_element]
     except IndexError as e:
