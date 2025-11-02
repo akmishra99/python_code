@@ -2,7 +2,7 @@
 
 #!/usr/bin/env python3
 
-
+import sys 
 
 #file count_number_of_bits_flipped_and_info_in_a_given_number.py
 #this program finds the number of bits flipped in a given number
@@ -68,12 +68,24 @@ given number = 2863311530
                 number of bits flipped in this number = 32
                 number of zero bits = 17
                 number of one bits = 16
+PS C:\Users\akmis\scratch_Nov_2_2025> python.exe .\count_number_of_bits_flipped_and_info_in_a_given_number.py 0x5555
+given_number in hex = 0x5555
+
+given number = 21845
+                number of zero bits flipped = 7
+                number of one bits flipped = 8
+                number of bits flipped in this number = 15
+                number of zero bits = 8
+                number of one bits = 8
+
+PS C:\Users\akmis\scratch_Nov_2_2025> python.exe .\count_number_of_bits_flipped_and_info_in_a_given_number.py ppp
+invalid literal for int() with base 16: 'ppp'
 
  """
 
 class bit_info:
     def __init__(self,given_number):
-        self.given_number = given_number
+        self.given_number = given_number    
         self.number_of_zero_bits_flipped = 0
         self.bits_flipped = 0
         self.number_of_one_bits_flipped = 0
@@ -133,20 +145,31 @@ def count_number_of_bits_flipped(given_number):
 
 
 if __name__=='__main__':
-    given_number = 0xAAAA
-    print("given_number in hex = 0x%x\n" % (given_number))
-    temp_number = count_number_of_bits_flipped(given_number) #
+    if len(sys.argv) == 2:
+        try:
+            given_number = int(sys.argv[1],16)
 
-    print(temp_number)  #
-    given_number = 0x101
-    print("given_number in hex = 0x%x\n" % (given_number))
-    temp_number = count_number_of_bits_flipped(given_number)
-    print(temp_number)
-    
-    given_number = 0xAAAAAAAA
-    print("given_number in hex = 0x%x\n" % (given_number))
-    temp_number = count_number_of_bits_flipped(given_number)
-    print(temp_number)
+        except ValueError as e:
+            print(e) 
+        else:  
+            print("given_number in hex = 0x%x\n" % (given_number))
+            temp_number = count_number_of_bits_flipped(given_number) #
+            print(temp_number) 
+    else:
+        given_number = 0xAAAA
+        print("given_number in hex = 0x%x\n" % (given_number))
+        temp_number = count_number_of_bits_flipped(given_number) #
+
+        print(temp_number)  #
+        given_number = 0x101
+        print("given_number in hex = 0x%x\n" % (given_number))
+        temp_number = count_number_of_bits_flipped(given_number)
+        print(temp_number)
+        
+        given_number = 0xAAAAAAAA
+        print("given_number in hex = 0x%x\n" % (given_number))
+        temp_number = count_number_of_bits_flipped(given_number)
+        print(temp_number)
     
                 
              
