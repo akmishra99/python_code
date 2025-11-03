@@ -81,6 +81,33 @@ given number = 21845
 PS C:\Users\akmis\scratch_Nov_2_2025> python.exe .\count_number_of_bits_flipped_and_info_in_a_given_number.py ppp
 invalid literal for int() with base 16: 'ppp'
 
+PS C:\Users\akmis\scratch_Nov_2_2025> python.exe .\count_number_of_bits_flipped_and_info_in_a_given_number.py 8900
+given_number in hex = 0x22c4
+
+given number = 8900
+                number of zero bits flipped = 4
+                number of one bits flipped = 4
+                number of bits flipped in this number = 8
+                number of zero bits = 10
+                number of one bits = 5
+
+PS C:\Users\akmis\scratch_Nov_2_2025> python.exe .\count_number_of_bits_flipped_and_info_in_a_given_number.py 890A
+invalid literal for int() with base 10: '890A'
+given_number in hex = 0x890a
+
+given number = 35082
+                number of zero bits flipped = 5
+                number of one bits flipped = 5
+                number of bits flipped in this number = 10
+                number of zero bits = 12
+                number of one bits = 5
+
+PS C:\Users\akmis\scratch_Nov_2_2025> python.exe .\count_number_of_bits_flipped_and_info_in_a_given_number.py 890p
+invalid literal for int() with base 10: '890p'
+invalid literal for int() with base 16: '890p'
+PS C:\Users\akmis\scratch_Nov_2_2025>
+
+
  """
 
 class bit_info:
@@ -146,15 +173,23 @@ def count_number_of_bits_flipped(given_number):
 
 if __name__=='__main__':
     if len(sys.argv) == 2:
+         
         try:
-            given_number = int(sys.argv[1],16)
+            given_number = int(sys.argv[1],10)
 
-        except ValueError as e:
-            print(e) 
-        else:  
-            print("given_number in hex = 0x%x\n" % (given_number))
-            temp_number = count_number_of_bits_flipped(given_number) #
-            print(temp_number) 
+        except ValueError as f:
+                print(f) 
+                try:
+                    given_number = int(sys.argv[1],16)   
+                    
+
+                except ValueError as e:
+                    print("invalid literal for int() with base 16: '%s'" % sys.argv[1])
+                    exit(1) 
+          
+        print("given_number in hex = 0x%x\n" % (given_number))
+        temp_number = count_number_of_bits_flipped(given_number) #
+        print(temp_number) 
     else:
         given_number = 0xAAAA
         print("given_number in hex = 0x%x\n" % (given_number))
