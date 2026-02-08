@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-"""
+r"""
 how to run this program and here is sample output of this game
 c:\Users\akmis\scratch_feb_7_2026>python mines_game1.py
 Mine Game Started
