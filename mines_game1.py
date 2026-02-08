@@ -69,13 +69,20 @@ def load_mines(MAX_ROWS,MAX_COLUMNS):
 def get_valid_mine(row,column):
     if (row -1 <= 0):
         row = 0
-    if (row + 1 >= MAX_ROWS):
-        row = MAX_ROWS
+    if (row + 1 >= MAX_ROWS -1):
+        row = MAX_ROWS -1
     if (column - 1 <= 0 ):
         column = 0
-    if (column + 1 >= MAX_COLUMNS):
-        column = MAX_COLUMNS
-
+    if (column + 1 >= MAX_COLUMNS -1):
+        column = MAX_COLUMNS -1
+    if (row <= 0):
+        row = 0
+    if (row >= MAX_ROWS -1):
+        row = MAX_ROWS -1
+    if (column <= 0):
+        column = 0
+    if (column >= MAX_COLUMNS -1 ):
+        column = MAX_COLUMNS -1
     return mines[row][column]
 
 
