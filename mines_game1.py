@@ -2,6 +2,89 @@
 
 r"""
 how to run this program and here is sample output of this game
+
+c:\Users\akmis\scratch_feb_7_2026>python mines_game1.py
+Mine Game Started
+X and Y where you want to move and see what is beneath it
+Enter  x between 0 and 63
+Enter y between 0 and 63
+Enter x =
+1
+Enter y =
+1
+make next move
+total adjacent mines at x = 1 and y = 1 , 0
+
+ score = 1
+
+Enter  x between 0 and 63
+Enter y between 0 and 63
+Enter x =
+2
+Enter y =
+1
+make next move
+total adjacent mines at x = 2 and y = 1 , 2
+
+ score = 2
+
+Enter  x between 0 and 63
+Enter y between 0 and 63
+Enter x =
+2
+Enter y =
+2
+make next move
+total adjacent mines at x = 2 and y = 2 , 2
+
+ score = 3
+
+Enter  x between 0 and 63
+Enter y between 0 and 63
+Enter x =
+3
+Enter y =
+3
+make next move
+total adjacent mines at x = 3 and y = 3 , 3
+
+ score = 4
+
+Enter  x between 0 and 63
+Enter y between 0 and 63
+Enter x =
+3
+Enter y =
+3
+make next move
+total adjacent mines at x = 3 and y = 3 , 3
+
+ score = 5
+
+Enter  x between 0 and 63
+Enter y between 0 and 63
+Enter x =
+4
+Enter y =
+4
+make next move
+total adjacent mines at x = 4 and y = 4 , 3
+
+ score = 6
+
+Enter  x between 0 and 63
+Enter y between 0 and 63
+Enter x =
+4
+Enter y =
+5
+game over
+ score = 6
+
+
+
+
+
 c:\Users\akmis\scratch_feb_7_2026>python mines_game1.py
 Mine Game Started
 X and Y where you want to move and see what is beneath it
@@ -123,7 +206,11 @@ if __name__=='__main__':
         row = int(input())
         print("Enter y = ")
         column = int(input())
-        play_game(row,column)
-        score += 1
+        if (row >=0 ) and (row <= MAX_ROWS -1) and (column >= 0) and (column <= MAX_COLUMNS -1):
+            play_game(row,column)
+            score += 1
+        else:
+            print("invalid input x and/or  y")
+
         print(" score = %d\n" %(score))
         
