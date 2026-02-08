@@ -51,7 +51,7 @@ c:\Users\akmis\scratch_feb_7_2026>
 
 
 import random
-
+score = 0
 MAX_ROWS = 64
 MAX_COLUMNS = 64
 #initialize the mine list of lists with zeros 
@@ -102,6 +102,7 @@ def adjacent_mines(rows,columns):
 def play_game(row,column):
     if (get_valid_mine(row,column)) == 1:
         print("game over")
+        print(" score = %d\n" %(score))
         exit (1)
     else:
          print("make next move")
@@ -110,6 +111,7 @@ def play_game(row,column):
 
 if __name__=='__main__':
     load_mines(MAX_ROWS,MAX_COLUMNS)
+    
     print("Mine Game Started")
     print("X and Y where you want to move and see what is beneath it ")
     while(1):
@@ -122,6 +124,6 @@ if __name__=='__main__':
         print("Enter y = ")
         column = int(input())
         play_game(row,column)
-
-
+        score += 1
+        print(" score = %d\n" %(score))
         
