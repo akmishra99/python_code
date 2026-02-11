@@ -138,7 +138,11 @@ score = 0
 MAX_ROWS = 64
 MAX_COLUMNS = 64
 #initialize the mine list of lists with zeros 
-mines =[[0 for x in range(MAX_ROWS)] for y in range(MAX_COLUMNS)]  
+mines =[[0 for x in range(MAX_ROWS)] for y in range(MAX_COLUMNS)] 
+
+
+previous_row = -1
+previous_column = -1
 
 
 def load_mines(MAX_ROWS,MAX_COLUMNS):
@@ -183,13 +187,22 @@ def adjacent_mines(rows,columns):
 
 
 def play_game(row,column):
+    global previous_row
+    global previous_column
+    global score
     if (get_valid_mine(row,column)) == 1:
         print("game over")
         print(" score = %d\n" %(score))
         exit (1)
     else:
-         print("make next move")
-         print("total adjacent mines at x = %d and y = %d , %d\n" %(row,column,adjacent_mines(row,column)))
+        if previous_row != row and previous_column != column:
+            print("make next move")
+            print("total adjacent mines at x = %d and y = %d , %d\n" %(row,column,adjacent_mines(row,column)))
+            previous_row = row
+            previous_column = column
+            score += 1
+        else:
+            print("make next move with different x and y then previous move")
 
 
 if __name__=='__main__':
@@ -208,7 +221,7 @@ if __name__=='__main__':
         column = int(input())
         if (row >=0 ) and (row <= MAX_ROWS -1) and (column >= 0) and (column <= MAX_COLUMNS -1):
             play_game(row,column)
-            score += 1
+            
         else:
             print("invalid input x and/or  y")
 
