@@ -78,11 +78,6 @@ def atoi(given_string):
     list_of_numbers.reverse()
     for i in list_of_numbers:
         if i in valid_numbers:
-            if ( k == 0):
-                k += 1
-                number = int(i)
-            else:
-                temp_int = int(i)
                 number += (10 ** k ) * int(i)
                 k += 1
                    
