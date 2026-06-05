@@ -9,7 +9,67 @@ import sys
 # 
 #C:\Users\akmis\scratch_june_3_2026>python3 multiply_strings.py
 #multiplication of string one and string two is = 121
+# Author:- Alok Kumar Mishra
+# e-mail : akmishra_99@yahoo.com
+# Date:- June 3 ,2026
 #
+r""" 
+C:\Users\akmis\scratch_june_4_2026>python3 multiply_strings.py
+usage string1 and string2 multiply_strings.py
+
+multiplication of string one and string two is = 121
+
+
+C:\Users\akmis\scratch_june_4_2026>python3 multiply_strings.py 100 10
+multiplication of string one and string two is = 1000
+
+multiplication of two strings = 1000
+
+
+C:\Users\akmis\scratch_june_4_2026>python3 multiply_strings.py 100 105
+multiplication of string one and string two is = 10500
+
+multiplication of two strings = 10500
+
+
+C:\Users\akmis\scratch_june_4_2026>python3 multiply_strings.py 123 123
+multiplication of string one and string two is = 15129
+
+multiplication of two strings = 15129
+
+
+C:\Users\akmis\scratch_june_4_2026> vi multiply_strings.py
+
+C:\Users\akmis\scratch_june_4_2026>C:\Users\akmis\scratch_june_4_2026>python3 multiply_strings.py
+usage string1 and string2 multiply_strings.py
+
+multiplication of string one and string two is = 121
+
+
+C:\Users\akmis\scratch_june_4_2026>python3 multiply_strings.py 100 10
+multiplication of string one and string two is = 1000
+
+multiplication of two strings = 1000
+
+
+C:\Users\akmis\scratch_june_4_2026>python3 multiply_strings.py 100 105
+multiplication of string one and string two is = 10500
+
+multiplication of two strings = 10500
+
+
+C:\Users\akmis\scratch_june_4_2026>python3 multiply_strings.py 123 123
+multiplication of string one and string two is = 15129
+
+multiplication of two strings = 15129
+
+
+C:\Users\akmis\scratch_june_4_2026> vi multiply_strings.py
+
+C:\Users\akmis\scratch_june_4_2026>
+
+
+"""
 def atoi(given_string):
     list_of_numbers = list(given_string)
     valid_numbers = ['0','1','2','3','4','5','6','7','8','9']
