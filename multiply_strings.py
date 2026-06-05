@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import sys
 
 #write a method take input of strings and implement the Multiply strings.
 #Example:
@@ -21,7 +22,9 @@ def atoi(given_string):
                 k += 1
                 number = int(i)
             else:
-                number += 10 * int(i)
+                temp_int = int(i)
+                number += (10 ** k ) * int(i)
+                k += 1
                    
                    
     return number 
@@ -37,6 +40,11 @@ def multiply(given_string, given_string_two):
     return return_string
     
 if __name__=="__main__":
-    multiply("11","11")
+    if len(sys.argv ) != 3:
+        print("usage string1 and string2 %s\n" %sys.argv[0])
+        multiply("11","11")
+    else:
+        print("multiplication of two strings = %s\n" % multiply(sys.argv[1],sys.argv[2]))
+
     
     
