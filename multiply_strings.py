@@ -66,15 +66,14 @@ multiplication of string one and string two is = 15129
 multiplication of two strings = 15129
 
 
-C:\Users\akmis\scratch_june_4_2026> vi multiply_strings.py
 
 C:\Users\akmis\scratch_june_4_2026>
-PS C:\Users\akmis\scratch_june_4_2026> python .\multiply_strings_with_negative_numbers.py "-100" 20
+PS C:\Users\akmis\scratch_june_4_2026> python .\multiply_strings.py "-100" 20
 multiplication of string one and string two is = -2000
 
 multiplication of two strings = -2000
 
-PS C:\Users\akmis\scratch_june_4_2026> python .\multiply_strings_with_negative_numbers.py "-100" "-20"
+PS C:\Users\akmis\scratch_june_4_2026> python .\multiply_strings.py "-100" "-20"
 multiplication of string one and string two is = 2000
 
 multiplication of two strings = 2000
